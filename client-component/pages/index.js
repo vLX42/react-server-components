@@ -6,7 +6,6 @@ const Message = (props) => {
 
   useEffect(() => {
     async function fetchAPI(file) {
-      console.log("load", file)
       let response = await fetch("/api/server?props=" + encodeURIComponent(file))
       response = await response.json()
       dataSet(response)
@@ -15,7 +14,7 @@ const Message = (props) => {
     fetchAPI(props.name)
 
   }, []);
-  console.log("data", data)
+
   return data ? <RenderMarkdown data={data.data} name={data.name}/> : <div>Loading...</div>;
 };
 

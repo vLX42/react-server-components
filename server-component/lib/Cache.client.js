@@ -23,7 +23,7 @@ export function useRefresh() {
 
 export function useServerResponse(props) {
   const key = JSON.stringify(props);
-  console.log(createResponseCache,key, unstable_getCacheForType)
+  
   const cache = unstable_getCacheForType(createResponseCache);
   let response = cache.get(key);
   if (response) {

@@ -12,6 +12,7 @@ export default function handler(req, res) {
     default:
       break;
   }
+  
   fetch(url).then(function (response) {
     return response.text().then(function (text) {
       res.statusCode = 200;

@@ -39,12 +39,8 @@ export default function handler(req, res) {
       res.setHeader("X-Props", JSON.stringify(props));
       res.end(result);
       resolve();
-      // resolve({
-      //     statusCode: 200,
-      //     body: result,
-      //     headers: {'Content-Type': 'application/text', 'X-Props': JSON.stringify(props)}
-    });
-    var fs = require("fs");
+    })
+    
     const _props = JSON.parse(props);
 
     let url = "https://raw.githubusercontent.com/facebook/react/master/README.md";

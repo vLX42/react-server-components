@@ -12,7 +12,7 @@ const StyledMarkdown = ({ children }) => (
         },
         h2: {
           props: {
-            className: 'mb-2 mb-4 text-xl font-bold  lg:text-2xl',
+            className: 'mb-2 mb-4 text-xl font-bold lg:text-2xl',
           },
         },
 
