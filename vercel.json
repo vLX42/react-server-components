@@ -1,0 +1,8 @@
+{
+  "builds": [
+    { "src": "client-component/next.config.js", "use": "@now/next" },
+    { "src": "server-component/next.config.js", "use": "@now/next" },
+    { "src": "home/next.config.js", "use": "@now/next" }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/home/$1" }]
+}
