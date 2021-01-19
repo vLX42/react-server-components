@@ -1,4 +1,5 @@
 import React from "react";
+import { join } from "path";
 import { pipeToNodeWritable } from "react-server-dom-webpack/writer.node.server";
 import RenderMarkdown from "../../components/RenderMarkdown";
 class Writer {
@@ -46,13 +47,26 @@ export default function handler(req, res) {
     var fs = require("fs");
     const _props = JSON.parse(props);
 
-    fs.readFile(`_data/${_props.name}.md`, "utf8", function (err, data) {
-      if (err) throw err;
-      pipeToNodeWritable(
-        React.createElement(RenderMarkdown, { name: _props.name, data: data }),
-        writer,
-        {}
-      );
+    let url = "https://raw.githubusercontent.com/facebook/react/master/README.md";
+    switch (_props.name) {
+      case "World":
+        url =
+          "https://raw.githubusercontent.com/facebook/create-react-app/master/README.md";
+        break;
+      default:
+        break;
+    }
+    fetch(url).then(function (response) {
+      return response.text().then(function (text) {
+        pipeToNodeWritable(
+            React.createElement(RenderMarkdown, {
+              name: _props.name,
+              data: text,
+            }),
+            writer,
+            {}
+          );
+      });
     });
   });
 }

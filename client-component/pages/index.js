@@ -7,7 +7,7 @@ const Message = (props) => {
   useEffect(() => {
     async function fetchAPI(file) {
       console.log("load", file)
-      let response = await fetch("/client-component/api/server?props=" + encodeURIComponent(file))
+      let response = await fetch("/api/server?props=" + encodeURIComponent(file))
       response = await response.json()
       dataSet(response)
     }

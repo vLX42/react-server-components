@@ -30,7 +30,7 @@ export function useServerResponse(props) {
     return response;
   }
   response = createFromFetch(
-    fetch('/server-component/api/server?props=' + encodeURIComponent(key))
+    fetch('/api/server?props=' + encodeURIComponent(key))
   );
   cache.set(key, response);
   return response;
