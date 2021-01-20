@@ -5,3 +5,7 @@ Simpel demo with React Server Components, this only a POC for getting it to run 
 Have a look at the example from the React team for a better and more extensive demo.
 
 There a two project in this folder, a client component version and a server components version. It's only to compare speed an bundle sizes.
+
+Check it out 👉 [Client-component](https://client-component.vercel.app/)
+
+Check it out 👉 [Server-component](https://server-component.vercel.app/)
