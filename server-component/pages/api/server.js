@@ -40,7 +40,7 @@ export default function handler(req, res) {
       res.end(result);
       resolve();
     })
-    
+
     const _props = JSON.parse(props);
 
     let url = "https://raw.githubusercontent.com/facebook/react/master/README.md";
@@ -54,6 +54,7 @@ export default function handler(req, res) {
     }
     fetch(url).then(function (response) {
       return response.text().then(function (text) {
+
         pipeToNodeWritable(
             React.createElement(RenderMarkdown, {
               name: _props.name,
